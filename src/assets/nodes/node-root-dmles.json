@@ -1,0 +1,42 @@
+{
+  "_id" : "58d0581bdf121dce611b7170",
+  "guid" : "1598305238624407B1D50552C27F739C",
+  "children" : [
+      "B70EAD7B31B147FD9C2B0DFED691F8B4",
+      "B70EAD7B31B147FD9C2B0DFED691F8B5"
+  ],
+  "parent" : "",
+  "name" : "DML-ES",
+  "orgId" : "",
+  "milServiceId" : "",
+  "providerCode" : "",
+  "isPrimaryHost" : false,
+  "orgRef" : "SYSTEM.0",
+  "parentRef" : "",
+  "treeLevel" : 0.0,
+  "nodeChain" : " \\ DML-ES (SYSTEM.0) (BRNC)",
+  "nodeTypeRef" : {
+      "id" : "58efd64244c0a5e103d6f38a",
+      "name" : "Root"
+  },
+  "serviceProviderRefs" : [
+      {
+          "id" : "59243eaeb3b6145b6824d2e2",
+          "name" : "ABi Search"
+      },
+      {
+          "id" : "58f514c785ff091493fa6f6a",
+          "name" : "User Management"
+      },
+      {
+          "id" : "58f514c785ff091493fa6f6e",
+          "name" : "Node Management"
+      },
+      {
+          "id" : "5990b9039755a1e6894039c4",
+          "name" : "ABi Management"
+      }
+  ],
+  "_isDeleted" : false,
+  "ancestry" : ""
+}

@@ -1,0 +1,50 @@
+{
+  "_id" : "58d0581bdf121dce611b7186",
+  "guid" : "7802079E5B9B46B2B258708F4D1F61A8",
+  "children" : [
+      "55165452E3D22203E0530D238B8CCB47",
+      "DB851832C0C14201ABF1C661CE0FC18D",
+      "0EE63B4AA30544CB8B6245707C947DCA",
+      "740D1DDF8AD44C9C9699C59B2FC70308",
+      "A1385B2804DE4953ABDC4489B266FBAB",
+      "C00207E877C2435A91787880B5B6532B",
+      "8135F9F2ED864CAA9878E0009021A4BE",
+      "131E312AFE904424801F6ABA17E9CB37",
+      "7682CE91E2344CB28594E63734D01157",
+      "94CE4DDEF4FF4EA18F2533347BEC356F"
+  ],
+  "parent" : "B70EAD7B31B147FD9C2B0DFED691F8B4",
+  "name" : "Army",
+  "orgId" : "",
+  "milServiceId" : "DA",
+  "providerCode" : "BRNC",
+  "isPrimaryHost" : false,
+  "orgRef" : "SYSTEM.10001",
+  "parentRef" : "SYSTEM.10000",
+  "treeLevel" : 2,
+  "nodeChain" : " \\ DML-ES (SYSTEM.0) (BRNC) \\ DOD (SYSTEM.10000) (BRNC) \\ ARMY (SYSTEM.10001) (BRNC)",
+  "nodeTypeRef" : {
+      "id" : "58efd64d44c0a5e103d6f397",
+      "name" : "Service"
+  },
+  "serviceProviderRefs" : [
+      {
+          "id" : "59243eaeb3b6145b6824d2e2",
+          "name" : "ABi Search"
+      },
+      {
+          "id" : "592deb21e6065bd5e4435404",
+          "name" : "Real Property"
+      },
+      {
+          "id" : "58f514c785ff091493fa6f6a",
+          "name" : "User Management"
+      },
+      {
+          "id" : "58f514c785ff091493fa6f74",
+          "name" : "Equipment Request Review"
+      }
+  ],
+  "_isDeleted" : false,
+  "ancestry" : "1598305238624407B1D50552C27F739C,B70EAD7B31B147FD9C2B0DFED691F8B4,"
+}

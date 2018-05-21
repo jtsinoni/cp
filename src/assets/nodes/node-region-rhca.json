@@ -1,0 +1,92 @@
+{
+  "_id" : "58d0581bdf121dce611b71a9",
+  "guid" : "DB851832C0C14201ABF1C661CE0FC18D",
+  "children" : [
+      "19027F1D247E47B091A04C40BE00582D",
+      "A0C2FD652755412787148B3D50024BF3",
+      "B673E167E47D449185B317F096FC8766",
+      "C88C3488CD9240888B7B0FDF56915D9E",
+      "312B6DCAFAFC45E5AC1134900391C212",
+      "67A6D2BC0E2E47588DD317AA1F9827FC",
+      "712DAAEABED8474BAFD8F4CD20FEDC71",
+      "0CBEF7487E5546A88F7C1EDF0482518A",
+      "2305BBEF73454A54B90BB2412505F658",
+      "63C56626100749A3B8E2A29B46C07FA5",
+      "F87FAD941BEF44FE92A48CF8A8DA87F8",
+      "6D1C38B279FB4636BEA7D1C64A6D8DF8",
+      "2D1376A433DB4451B0238727FDF5FC6D",
+      "425DA6966B2C4B48B25E5307F3689465",
+      "898BAA14FAD5409F850B12A0C1061A4C",
+      "24F92AD7170D430DA3254062FA89280B"
+  ],
+  "parent" : "7802079E5B9B46B2B258708F4D1F61A8",
+  "name" : "RHC-A",
+  "orgId" : "",
+  "milServiceId" : "DA",
+  "providerCode" : "BRNC",
+  "isPrimaryHost" : false,
+  "orgRef" : "SYSTEM.10010",
+  "parentRef" : "SYSTEM.10001",
+  "treeLevel" : 3,
+  "nodeChain" : " \\ DML-ES (SYSTEM.0) (BRNC) \\ DOD (SYSTEM.10000) (BRNC) \\ ARMY (SYSTEM.10001) (BRNC) \\ RHC-A (SYSTEM.10010) (BRNC)",
+  "nodeTypeRef" : {
+      "id" : "58efd65744c0a5e103d6f3a4",
+      "name" : "Region"
+  },
+  "providerRefs": [
+    {
+      "id": "600",
+      "name": "RHC-A Provider",
+      "rhcaRefs" : {
+        "id": "601",
+        "name": "RHC-A Collection"
+      }
+    }
+  ],
+  "consumerRefs": [
+    {
+      "id": "700",
+      "name": "RHC-A Consumer",
+      "nodeRef": {
+        "id": "DB851832C0C14201ABF1C661CE0FC18D",
+        "name": "RHC-A"
+      },
+      "providerRef": {
+        "id": "600",
+        "name": "RHC-A Provider"
+      }
+    },
+    {
+      "id": "800",
+      "name": "Finance Consumer",
+      "nodeRef": {
+        "id": "58d0581bdf121dce611b71c9",
+        "name": "DOD"
+      },
+      "providerRef": {
+        "id": "500",
+        "name": "Finanace Provider"
+      }
+    }
+  ],
+  "serviceProviderRefs" : [
+      {
+          "id" : "59243eaeb3b6145b6824d2e2",
+          "name" : "ABi Search"
+      },
+      {
+          "id" : "592deb21e6065bd5e4435404",
+          "name" : "Real Property"
+      },
+      {
+          "id" : "58f514c785ff091493fa6f6a",
+          "name" : "User Management"
+      },
+      {
+          "id" : "58f514c785ff091493fa6f74",
+          "name" : "Equipment Request Review"
+      }
+  ],
+  "_isDeleted" : false,
+  "ancestry" : "1598305238624407B1D50552C27F739C,B70EAD7B31B147FD9C2B0DFED691F8B4,7802079E5B9B46B2B258708F4D1F61A8,"
+}

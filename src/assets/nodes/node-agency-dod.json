@@ -1,0 +1,55 @@
+{
+  "_id" : "58d0581bdf121dce611b71c9",
+  "guid" : "B70EAD7B31B147FD9C2B0DFED691F8B4",
+  "children" : [
+      "97B053F740564141AE30F36DFA851A82",
+      "7802079E5B9B46B2B258708F4D1F61A8",
+      "A1FB8AAF96334734AA5D06889E9BC3DA",
+      "7EA5A38BC99B4A76B780B1E3CADFEDD7",
+      "DFADEB28F1E643E1B7472AD448F326C3"
+  ],
+  "parent" : "1598305238624407B1D50552C27F739C",
+  "name" : "DOD",
+  "orgId" : "",
+  "milServiceId" : "  ",
+  "providerCode" : "BRNC",
+  "isPrimaryHost" : false,
+  "orgRef" : "SYSTEM.10000",
+  "parentRef" : "SYSTEM.0",
+  "treeLevel" : 1,
+  "nodeChain" : " \\ DML-ES (SYSTEM.0) (BRNC) \\ DOD (SYSTEM.10000) (BRNC)",
+  "nodeTypeRef" : {
+      "id" : "58efd61944c0a5e103d6f362",
+      "name" : "Agency"
+  },
+  "providerRefs": [
+    {
+      "id": "500",
+      "name": "Finance Provider",
+      "financeRefs" : {
+        "id": "501",
+        "name": "Finance Collection"
+      }
+    }
+  ],
+  "serviceProviderRefs" : [
+      {
+          "id" : "59243eaeb3b6145b6824d2e2",
+          "name" : "ABi Search"
+      },
+      {
+          "id" : "592deb21e6065bd5e4435404",
+          "name" : "Real Property"
+      },
+      {
+          "id" : "58f514c785ff091493fa6f6a",
+          "name" : "User Management"
+      },
+      {
+          "id" : "58f514c785ff091493fa6f74",
+          "name" : "Equipment Request Review"
+      }
+  ],
+  "_isDeleted" : false,
+  "ancestry" : "1598305238624407B1D50552C27F739C,"
+}

@@ -1,0 +1,21 @@
+{
+  "_id" : "960",
+  "guid" : "960",
+  "children" : [],
+  "parent" : "900",
+  "name" : "Pharma ABC",
+  "orgId" : "W33DME",
+  "milServiceId" : "DA",
+  "providerCode" : "ORG",
+  "isPrimaryHost" : false,
+  "orgRef" : "W33DME.1000",
+  "parentRef" : "SYSTEM.10010",
+  "treeLevel" : 6,
+  "nodeChain" : " \\ DML-ES (SYSTEM.0) (BRNC) \\ DOD (SYSTEM.10000) (BRNC) \\ ARMY (SYSTEM.10001) (BRNC) \\ RHC-A (SYSTEM.10010) (BRNC) \\ W33DME (W33DME.1000) (ORG)",
+  "nodeTypeRef" : {
+      "id" : "58efd84244c0a5e103d6f553",
+      "name" : "Customer"
+  },
+  "_isDeleted" : false,
+  "ancestry" : "1598305238624407B1D50552C27F739C,B70EAD7B31B147FD9C2B0DFED691F8B4,7802079E5B9B46B2B258708F4D1F61A8,DB851832C0C14201ABF1C661CE0FC18D,"
+}
