@@ -1,8 +1,8 @@
-import {NodeX} from './nodex';
+import {Node} from './node';
 import {NodeType} from './node-type';
 
 export class NodeService {
-  public jsonMapToObject(jsonData: NodeX) {
+  public jsonToObject(jsonData: Node): any {
     const keys = Object.keys(this);
 
     for (const key of keys) {
@@ -28,5 +28,7 @@ export class NodeService {
         }
       }
     }
+
+    return this;
   }
 }

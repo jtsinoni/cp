@@ -2,16 +2,16 @@ import {Node} from './node';
 import {NodeType} from './node-type';
 import {ServiceProvider} from './service-provider';
 import {NodeService} from './node-service';
-import {NodeX} from './nodex';
+import {Queue} from './queue';
 
-import * as root from '../../assets/nodes/node-root-dmles.json';
-import * as dod from '../../assets/nodes/node-agency-dod.json';
-import * as army from '../../assets/nodes/node-service-dod.json';
-import * as rhca from '../../assets/nodes/node-region-rhca.json';
-import * as fortStewart from '../../assets/nodes/node-site-fort-stewart.json';
-import * as depta from '../../assets/nodes/node-department-depta.json';
-import * as pharmaABC from '../../assets/nodes/node-customer-pharmaABC.json';
-import * as pharmaXYZ from '../../assets/nodes/node-customer-pharmaZYZ.json';
+import * as rootJSON from '../../assets/nodes/node-root-dmles.json';
+import * as dodJSON from '../../assets/nodes/node-agency-dod.json';
+import * as armyJSON from '../../assets/nodes/node-service-army.json';
+import * as rhcaJSON from '../../assets/nodes/node-region-rhca.json';
+import * as fortStewartJSON from '../../assets/nodes/node-site-fort-stewart.json';
+import * as deptaJSON from '../../assets/nodes/node-department-depta.json';
+import * as pharmaABC_JSON from '../../assets/nodes/node-customer-pharmaABC.json';
+import * as pharmaXYZ_JSON from '../../assets/nodes/node-customer-pharmaXYZ.json';
 
 const customStringify = (v): any => {
   const cache = new Map();
@@ -28,35 +28,21 @@ const customStringify = (v): any => {
   });
 };
 
-const findIndex = (nodes: Node[], data: string): number => {
-  let index = -1;
-
-  for (let i = 0; i < nodes.length; i++) {
-      if (nodes[i].data === data) {
-          index = i;
-      }
-  }
-  return index;
-};
-
-
-
-class Queue {
-  private store: Node[] = [];
-  public enqueue(node: Node): number {
-    return this.store.push(node);
-  }
-
-  public dequeue(): Node {
-    return this.store.shift();
-  }
-}
-
 export class Tree {
   public root: Node;
 
-  constructor(data: any) {
-    this.root = new Node(data);
+  constructor(node: Node) {
+    this.root = node;
+  }
+
+  private findIndex(nodes: Node[], child: Node): number {
+    let index = -1;
+    for (let i = 0; i < nodes.length; i++) {
+        if (nodes[i].name === child.name) {
+            index = i;
+        }
+    }
+    return index;
   }
 
    // Breadth First Search
@@ -94,12 +80,11 @@ export class Tree {
     traversal.call(this, callback);
   }
 
-  public add(data: any, toData: string, traversal): void {
-    const child: Node = new Node(data);
+  public add(child: Node, to: Node, traversal): void {
     let parent: Node = null;
 
     this.contains((node) => {
-      if (node.data === toData) {
+      if (node.name === to.name) {
         parent = node;
       }
     }, traversal);
@@ -112,19 +97,19 @@ export class Tree {
     }
   }
 
-  public remove(data: any, fromData: string, traversal): Node {
+  public remove(child: Node, from: Node, traversal): Node {
     let parent: Node = null;
     let childToRemove: Node = null;
     let index = -1;
 
     this.contains((node) => {
-      if (node.data === fromData) {
+      if (node.name === from.name) {
         parent = node;
       }
     }, traversal);
 
     if (parent) {
-      index = findIndex(parent.children, data);
+      index = this.findIndex(parent.children, child);
 
       if (index === -1) {
         throw new Error('Node to remove does not exist.');
@@ -139,52 +124,45 @@ export class Tree {
   }
 }
 
-// console.log(`json file => ${(<any>root).name}`);
-
-const nodex: NodeX = new NodeX();
 const nodeService: NodeService = new NodeService();
+const root: Node = nodeService.jsonToObject.call(new Node(), rootJSON);
+const dod: Node = nodeService.jsonToObject.call(new Node(), dodJSON);
+const army: Node = nodeService.jsonToObject.call(new Node(), armyJSON);
+const rhca: Node = nodeService.jsonToObject.call(new Node(), rhcaJSON);
+const fortStewart: Node = nodeService.jsonToObject.call(new Node(), fortStewartJSON);
+const depta: Node = nodeService.jsonToObject.call(new Node(), deptaJSON);
+const pharmaABC: Node = nodeService.jsonToObject.call(new Node(), pharmaABC_JSON);
+const pharmaXYZ: Node = nodeService.jsonToObject.call(new Node(), pharmaXYZ_JSON);
 
-// nodeService.jsonMapToObject.call(nodex, root);
-// console.log(`root => ${customStringify(root)}`);
-
-nodeService.jsonMapToObject.call(nodex, rhca);
-console.log(`root => ${customStringify(rhca)}`);
-
-console.log(`\nnode => ${customStringify(nodex)}`);
-
-const tree: Tree = new Tree('DML-ES');
+const tree: Tree = new Tree(root);
 const traverseStrategy = tree.traverseDF;
 
-tree.add('DOD', 'DML-ES', traverseStrategy);
-tree.add('Army', 'DOD', traverseStrategy);
-tree.add('Air Force', 'DOD', traverseStrategy);
-tree.add('Navy', 'DOD', traverseStrategy);
-tree.add('RHC-A', 'Army', traverseStrategy);
-tree.add('Fort Stewart', 'RHC-A', traverseStrategy);
-tree.add('Department A', 'Fort Stewart', traverseStrategy);
-tree.add('Pharma XYZ', 'Department A', traverseStrategy);
-tree.add('Pharma ABC', 'Department A', traverseStrategy);
-
+tree.add(dod, root, traverseStrategy);
+tree.add(army, dod, traverseStrategy);
+tree.add(rhca, army, traverseStrategy);
+tree.add(fortStewart, rhca, traverseStrategy);
+tree.add(depta, fortStewart, traverseStrategy);
+tree.add(pharmaABC, depta, traverseStrategy);
+tree.add(pharmaXYZ, depta, traverseStrategy);
 
 // tree.traverseBF((node) => {
-//   console.log(`traverseBF => ${customStringify(node.data)}`);
+//   console.log(`traverseBF => ${customStringify(node.name)}`);
 // });
 
-// tree.traverseDF((node) => {
-//   console.log(`traverseDF => ${customStringify(node.data)}`);
-// });
+tree.traverseDF((node) => {
+  console.log(`traverseDF => ${customStringify(node.name)}`);
+});
 
 
 // tree.contains((node) => {
-//   if (node.data === 'Army') {
-//     console.log(`contains => ${customStringify(node)}`);
+//   if (node.name === 'Army') {
+//     console.log(`contains => ${customStringify(node.name)}`);
 //   }
 // }, traverseStrategy);
 
-// const childToRemove: Node = tree.remove('Pharma ABC', 'Department A', tree.traverseBF);
-// const childToRemove: Node = tree.remove('Department A', 'Fort Stewart', traverseStrategy);
-// console.log(`childToRemove => ${customStringify(childToRemove)}`);
+// tree.remove(pharmaABC, depta, traverseStrategy);
+// tree.remove(depta, fortStewart, traverseStrategy);
 
-// tree.traverseBF((node) => {
-//   console.log(`traverse => ${customStringify(node.data)}`);
+// tree.traverseDF((node) => {
+//   console.log(`traverse => ${customStringify(node.name)}`);
 // });
