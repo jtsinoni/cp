@@ -21,7 +21,7 @@ const customStringify = (v): any => {
         // Circular reference found, discard key
         return;
       }
-      // Store value in our map
+      // Store value in map
       cache.set(value, true);
     }
     return value;
@@ -149,16 +149,16 @@ tree.add(pharmaXYZ, depta, traverseStrategy);
 //   console.log(`traverseBF => ${customStringify(node.name)}`);
 // });
 
-tree.traverseDF((node) => {
-  console.log(`traverseDF => ${customStringify(node.name)}`);
-});
+// tree.traverseDF((node) => {
+//   console.log(`traverseDF => ${customStringify(node.name)}`);
+// });
 
 
-// tree.contains((node) => {
-//   if (node.name === 'Army') {
-//     console.log(`contains => ${customStringify(node.name)}`);
-//   }
-// }, traverseStrategy);
+tree.contains((node) => {
+  if (node.name === 'Army') {
+    console.log(`contains => ${customStringify(node)}`);
+  }
+}, traverseStrategy);
 
 // tree.remove(pharmaABC, depta, traverseStrategy);
 // tree.remove(depta, fortStewart, traverseStrategy);
